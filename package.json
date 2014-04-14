@@ -1,10 +1,11 @@
 {
   "name": "Website",
   "version": "0.0.0",
-  "description": "website =======",
+  "description": "my website",
   "main": "handlers.js",
   "dependencies": {
-    "express": "~3.5.1"
+    "express": "latest",
+    "ejs": "latest"
   },
   "devDependencies": {},
   "scripts": {
@@ -16,14 +17,14 @@
     "url": "https://github.com/grayjax/website.git"
   },
   "author": "",
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.3.x"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/grayjax/website/issues"
   },
   "homepage": "https://github.com/grayjax/website"
-  },
-  {
-  "engines": {
-    "node": "0.10.x"
   }
 }

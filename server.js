@@ -9,11 +9,23 @@ require('./routes')(app);
 
 app.use(express.static(path.normalize(__dirname) + '/public'))
 
-app.get('/', function(req, res) {
-	res.send('Hello, welcome to CS1501');
+
+app.use(express.errorHandler());
+
+app.configure(function() {
+	app.use(express.logger('dev'));
+	app.use(express.bodyParser());
+})
+
+
+
+app.set('views', path.normalize(__dirname) + '/public');
+app.set('view engine', 'html');
+app.engine('html', require('ejs').renderFile);
+
+
 
 
 var port = Number(process.env.PORT || 8000);
-app.listen(port, function() {
-	console.log("Express app listening on port" + port);
-});
+app.listen(8000);
+console.log("Express app listening on port" + port);
