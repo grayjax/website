@@ -5,15 +5,13 @@ var express = require("express")
 
 var app = express();
 
-var uristring = process.env.MONGOLAB_URI || 
-'mongodb://heroku_app24139117:h0un3479k6ge9et414mfsbtbou@ds029197.mongolab.com:29197/heroku_app24139117';
-// 'mongodb://localhost/myMongodbDatabase';
-
-
 // Points Express to a folder where you keep static files
 // e.g. css or client side js files
 app.use(express.static(path.normalize(__dirname) + '/public'))
 
+var uristring = process.env.MONGOLAB_URI || 
+"mongodb://heroku_app24139117:h0un3479k6ge9et414mfsbtbou@ds029197.mongolab.com:29197/heroku_app24139117"
+// 'mongodb://localhost/myMongodbDatabase';
 
 // These 3 lines tell express that we are going to be rendering html files
 // held in the public directory which should be in the same directory as this file
