@@ -4,7 +4,10 @@ var pinSchema = mongoose.Schema({
 	title: String,
 	description: String,
 	image_url: String,
-	date: { type: Date, default: Date.now },
+	date: { 
+		type: Date, 
+		default: Date.now 
+	}
 });
 
 pinSchema.methods.print_out = function() {
