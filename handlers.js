@@ -41,17 +41,18 @@ exports.pinterless = function(req, res) {
 
 exports.createPin = function(req, res) {
 	var newPin = new Pin({ 
-								title: req.body.title, 
-								description: req.body.description, 
-								image_url: req.body.image_url 
-						});
+		title: req.body.title, 
+		description: req.body.description, 
+		image_url: req.body.image_url 
+	});
+
 	newPin.save(function(err) {
 		if (err) {
-			console.log("Error saving pin");
-		} else {
+			console.log("Error saving pin: " + err)} 
+			else {
 			res.redirect('/pinterless');
 		};
-	});	
+	})	
 
 }
 
